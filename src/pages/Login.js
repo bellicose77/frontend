@@ -23,6 +23,7 @@ function Login() {
     if (data?.status == 200) {
         setErrorMessage('');
         dispatch({ type: 'LOGIN_SUCCESS' });
+        dispatch({ type: 'USER_EMAIL', email: username });
         navigate('/');
     }
     else {

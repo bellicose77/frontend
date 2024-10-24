@@ -25,25 +25,6 @@ function SignUp() {
       return;
     }
 
-    // const response = await fetch('https://localhost:7128/api/User/register', {
-    //   method: 'POST',
-    //   mode: 'no-cors',
-    //   body: {
-    //     phoneNumber: "01858047274",
-    //     email: "abseruddin26@gmail.com",
-    //     password: "1234",
-    //     confirmPassword: "1234",
-    //     firstName: "Abser",
-    //     lastName: "Uddin",
-    //     address: "BUET"
-    //   },
-    //   headers: {},
-    // });
-
-    // if (response.ok) {
-    //   navigate('/login');
-    // }
-    debugger;
     const { data, err } = await publicationPost(
         'https://localhost:7128/api/User/register',
         {
@@ -57,7 +38,7 @@ function SignUp() {
         }
       );
 
-    if(data.status == 200){
+    if(data?.status == 200){
         navigate('/login');
     }
   };

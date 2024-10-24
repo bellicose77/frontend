@@ -1,36 +1,45 @@
 // BookingHistory.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { publicationGet, publicationPost } from '../api/api';
+import { useSelector, useDispatch } from 'react-redux';
 
 function BookingHistory() {
-  const [bookings, setBookings] = useState([
-    {
-      id: 1,
-      bookingDate: '2024-01-12',
-      fromDate: '2024-12-01',
-      toDate: '2024-12-05',
-      roomType: 'Deluxe Suite',
-      paymentStatus: 'Paid',
-    },
-    {
-      id: 2,
-      bookingDate: '2024-02-20',
-      fromDate: '2024-10-05',
-      toDate: '2024-10-10',
-      roomType: 'Standard Room',
-      paymentStatus: 'Pending',
-    },
-    {
-      id: 3,
-      bookingDate: '2024-03-18',
-      fromDate: '2024-09-10',
-      toDate: '2024-09-15',
-      roomType: 'Executive Suite',
-      paymentStatus: 'Paid',
-    },
-  ]);
-
+  const [bookings, setBookings] = useState();
+  const [roomTypes, setRoomTypes] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const [selectedBooking, setSelectedBooking] = useState(null);
+  const dispatch = useDispatch();
+  const userEmail = useSelector((state) => state.userEmail);
+
+  useEffect(()=>{
+    fetchAllBooking();
+    getRooms();
+  }, [userEmail]);
+
+  async function fetchAllBooking(){
+    const { data, err } = await publicationGet(
+      'https://localhost:7128/api/Booking/'+userEmail
+    );
+    
+    if(data?.status == 200){
+      setBookings(data.data);
+    }
+  }
+
+  async function getRooms(){
+    const { data, err } = await publicationGet(
+      'https://localhost:7128/api/Room'
+    );
+    
+    if(data?.status == 200){
+      setRoomTypes(data.data);
+    }
+  }
+
+  function getRoomType(id){
+    var roomType = roomTypes.find(item => item.id == id);
+    return roomType ? roomType.roomType : null;
+  }
 
   const handleCancelClick = (booking) => {
     setSelectedBooking(booking);
@@ -56,14 +65,14 @@ function BookingHistory() {
     <div className="booking-history-container">
       <h2>Your Booking History</h2>
       <div className="bookings-list">
-        {bookings.map((booking) => (
+        {bookings && bookings.map((booking) => (
           <div key={booking.id} className="booking-card">
-            <p><strong>Booking Date:</strong> {booking.bookingDate}</p>
-            <p><strong>From:</strong> {booking.fromDate}</p>
-            <p><strong>To:</strong> {booking.toDate}</p>
-            <p><strong>Room Type:</strong> {booking.roomType}</p>
-            <p><strong>Payment Status:</strong> {booking.paymentStatus}</p>
-            {isFutureBooking(booking.fromDate) && (
+            <p><strong>Booking Date:</strong> {booking.createdAt}</p>
+            <p><strong>From:</strong> {booking.checkInDate}</p>
+            <p><strong>To:</strong> {booking.checkOutDate}</p>
+            <p><strong>Room Type:</strong> {getRoomType(booking.roomId)}</p>
+            <p><strong>Payment Status:</strong> {booking.paymentStatus ?? 'Not Paid'}</p>
+            {isFutureBooking(booking.checkInDate) && (
               <button onClick={() => handleCancelClick(booking)} className="cancel-btn">
                 Cancel Booking
               </button>
