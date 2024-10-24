@@ -1,0 +1,534 @@
+/* General NavBar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  /* Links Container */
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Right-most login/logout */
+  .navbar-login {
+    margin-left: auto;
+  }
+  
+  /* Style for Links */
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Hover effect */
+  .navbar a:hover {
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+  }
+
+  /* Center the login form */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-color: #f0f0f0;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .login-button {
+    padding: 10px;
+    width: 320px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .login-button:hover {
+    background-color: #555;
+  }
+  
+  .app-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .rooms-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .room-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 250px;
+    text-align: left;
+  }
+  
+  .room-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .room-details-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  .room-details-link:hover {
+    background-color: #0056b3;
+  }
+
+  .room-details-container {
+    padding: 20px;
+    background-color: #f1f1f1;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .room-details-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: #333;
+  }
+
+  .booking-container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  select,
+  input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .booking-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .booking-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Global Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  .login-container,
+  .signup-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+  }
+  
+  .booking-history-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .booking-card {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-card p {
+    margin: 5px 0;
+  }
+  
+  .cancel-btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Popup styles */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-inner {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-inner p {
+    margin-bottom: 20px;
+  }
+  
+  .confirm-btn,
+  .cancel-popup-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .confirm-btn {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .confirm-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .cancel-popup-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .cancel-popup-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+/* Image Slider Container */
+.image-slider {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.5s ease-in-out;
+  }
+  
+  .slides.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Dots for navigation */
+  .dots {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* RoomsPage.css */
+
+/* Container for the room cards */
+.rooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Each room card */
+  .room-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 400px;
+    height: 700px;  /* Fixed height for all cards */
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Hover effect for the card to pop up */
+  .room-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Room Type at the top */
+  .room-type {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0 10px 0;
+  }
+  
+  /* Container for the room image */
+  .room-image-container {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .room-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Image zoom-in effect on hover */
+  .room-card:hover .room-image {
+    transform: scale(1.1);
+  }
+  
+  /* Room price styling with Tk symbol */
+  .room-price {
+    font-size: 1.4rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .price-description{
+    font-size: .8rem;
+    color: #ff896b;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  /* Room description */
+  .room-description {
+    text-align: justify;
+    font-size: 1rem;
+    color: #555;
+    padding: 0 15px;
+    line-height: 1.5;
+    flex-grow: 1; /* Ensures the description grows/shrinks to fill space */
+    overflow: hidden; /* Ensure long text doesn't overflow */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;  /* Limits description to 4 lines */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  
+  /* Buttons container */
+  .room-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-top: auto; /* Ensures buttons are always at the bottom */
+  }
+  
+  /* Styling for buttons */
+  .btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-grow: 1; /* Makes buttons equal width */
+    margin: 0 5px; /* Adds space between buttons */
+  }
+  
+  /* View Details button */
+  .view-details-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Book Now button */
+  .book-now-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .book-now-btn:hover {
+    background-color: #c0392b;
+  }
+  
