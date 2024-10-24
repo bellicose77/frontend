@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { publicationGet, publicationPost } from '../api/api';
 
 function Booking() {
   const [roomType, setRoomType] = useState('');
@@ -9,6 +10,20 @@ function Booking() {
     // Handle booking logic
     alert('Booking successful!');
   };
+
+  useEffect(() => {
+    getRoomType();
+  }, []);
+
+  async function getRoomType(){
+    const { data, err } = await publicationGet(
+      'https://localhost:7128/api/Room/roomType'
+    );
+  
+    if(data?.status == 200){
+      setRoomType(data.data);
+    }
+  }
 
   return (
     <div className="booking-container">

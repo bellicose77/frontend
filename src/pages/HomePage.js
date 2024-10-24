@@ -4,6 +4,12 @@ import { useSelector } from 'react-redux';
 import image1 from '../assets/image1.jpg';
 import image2 from '../assets/image2.jpg';
 import image3 from '../assets/image3.jpg';
+import image4 from '../assets/image4.jpg';
+import image5 from '../assets/image5.jpg';
+import image6 from '../assets/image6.jpg';
+import image7 from '../assets/image7.jpg';
+import image8 from '../assets/image8.jpg';
+import image9 from '../assets/image9.jpg';
 import { publicationGet } from '../api/api';
 
 function App() {
@@ -30,18 +36,36 @@ function App() {
         setSlideIndex(index);
     };
 
-    useEffect(async () => {
-        debugger;
-        const { data, err } = await publicationGet(
-            'https://localhost:7128/api/Room'
-          );
-    
-        if(data.status == 200){
-            setRooms(data.data);
-        }
+    useEffect(() => {
+        getRooms();
     }, []);
 
-    const viewDetails = async (roomId) => {
+    async function getRooms(){
+      const { data, err } = await publicationGet(
+        'https://localhost:7128/api/Room'
+      );
+      
+      if(data?.status == 200){
+          var rooms = data.data;
+          rooms.forEach(element => {
+            if (element.image == 'image4')
+              element.image = image4;
+            if (element.image == 'image5')
+              element.image = image5;
+            if (element.image == 'image6')
+              element.image = image6;
+            if (element.image == 'image7')
+              element.image = image7;
+            if (element.image == 'image8')
+              element.image = image8;
+            if (element.image == 'image9')
+              element.image = image9;
+          });
+          setRooms(rooms);
+      }
+    }
+
+    const viewDetails = (roomId) => {
         navigate('/room/' + roomId);
     };
 
@@ -89,7 +113,7 @@ function App() {
           <p className="price-description">From/Per Night</p>
           <p className="room-description">{room.description}</p>
           <div className="room-buttons">
-            <button className="btn view-details-btn" to={`/room/${room.id}`}>View Details</button>
+            <button className="btn view-details-btn" onClick={() => viewDetails(room.id)}>View Details</button>
             <button className="btn book-now-btn" onClick={bookRoom}>Book Now</button>
           </div>
         </div>
