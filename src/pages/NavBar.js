@@ -19,6 +19,7 @@ function NavBar() {
             <Link to="/booking">Book a Room</Link>
             <Link to="/bookinghistory">Booking History</Link>
             {/* <Link to="/rooms">Room Details</Link> */}
+            <Link to="/dashboard">DashBoard</Link>
           </>
         )}
       </div>

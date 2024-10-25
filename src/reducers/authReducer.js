@@ -13,11 +13,14 @@ export const authReducer = (state = initialState, action) => {
         isLoggedIn: true,
       };
     case 'LOGOUT':
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userEmail');
       return {
         ...state,
         isLoggedIn: false,
       };
     case 'USER_EMAIL':
+      localStorage.setItem('userEmail', action.email); 
         return {
           ...state,
           userEmail: action.email,

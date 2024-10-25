@@ -21,6 +21,8 @@ function Login() {
       );
     
     if (data?.status == 200) {
+      console.log(data);
+      localStorage.setItem('authToken', data.token);
         setErrorMessage('');
         dispatch({ type: 'LOGIN_SUCCESS' });
         dispatch({ type: 'USER_EMAIL', email: username });
