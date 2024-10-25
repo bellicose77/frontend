@@ -38,12 +38,14 @@ function Login() {
         type="text"
         placeholder="Username"
         value={username}
+        autoComplete="off"
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
+        autoComplete="off"
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleLogin}>Login</button>

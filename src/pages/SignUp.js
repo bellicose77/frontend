@@ -50,6 +50,7 @@ function SignUp() {
         type="text"
         name="firstName"
         placeholder="First Name"
+        autoComplete="off"
         value={formData.firstName}
         onChange={handleInputChange}
       />
@@ -58,6 +59,7 @@ function SignUp() {
         name="lastName"
         placeholder="Last Name"
         value={formData.lastName}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <input
@@ -65,6 +67,7 @@ function SignUp() {
         name="address"
         placeholder="Address"
         value={formData.address}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <input
@@ -72,6 +75,7 @@ function SignUp() {
         name="phoneNumber"
         placeholder="Phone Number"
         value={formData.phoneNumber}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <input
@@ -79,6 +83,7 @@ function SignUp() {
         name="email"
         placeholder="Email"
         value={formData.email}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <input
@@ -86,6 +91,7 @@ function SignUp() {
         name="password"
         placeholder="Password"
         value={formData.password}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <input
@@ -93,6 +99,7 @@ function SignUp() {
         name="confirmPassword"
         placeholder="Confirm Password"
         value={formData.confirmPassword}
+        autoComplete="off"
         onChange={handleInputChange}
       />
       <button onClick={handleSignUp}>Sign Up</button>
