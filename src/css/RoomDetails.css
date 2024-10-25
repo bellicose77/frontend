@@ -1,0 +1,136 @@
+/* RoomDetails.css */
+
+.room-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Main Image with Overlay */
+  .room-image-container {
+    position: relative;
+  }
+  
+  .room-image-main {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+  }
+  
+  .room-image-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .room-image-overlay h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  /* Room Info */
+  .room-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .room-title {
+    font-size: 1.8em;
+    color: #333;
+  }
+  
+  .room-price {
+    font-size: 1.4em;
+    color: #5a9;
+  }
+  
+  /* Amenities Section */
+  .room-amenities {
+    margin: 20px 0;
+  }
+  
+  .room-amenities h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+  
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .amenity-icon {
+    font-size: 1.5em;
+  }
+  
+  .amenity-name {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .amenity-value {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  /* Room Description */
+  .room-description h3 {
+    font-size: 1.6em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .room-description p {
+    text-align: justify;
+    line-height: 1.6;
+  }
+  
+  /* Reviews Section */
+  .room-reviews {
+    margin-top: 20px;
+  }
+  
+  .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .submit-review-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #5a9;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-review-button:hover {
+    background-color: #4b8;
+  }
+  
