@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function NavBar() {
     const isLoggedIn = useSelector((state) => state.isLoggedIn);
+    const isAdmin = useSelector((state) => state.isAdmin);
     const dispatch = useDispatch();
 
     const handleLogout = () => {
@@ -19,7 +20,9 @@ function NavBar() {
             <Link to="/booking">Book a Room</Link>
             <Link to="/bookinghistory">Booking History</Link>
             {/* <Link to="/rooms">Room Details</Link> */}
-            <Link to="/dashboard">DashBoard</Link>
+            {isAdmin && 
+              <Link to="/dashboard">DashBoard</Link>
+            }
           </>
         )}
       </div>

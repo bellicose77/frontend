@@ -1,7 +1,8 @@
 // Initial state
 const initialState = {
   isLoggedIn: false,
-  userEmail: ''
+  userEmail: '',
+  isAdmin: false
 };
 
 // Reducer function to manage the login state
@@ -25,6 +26,11 @@ export const authReducer = (state = initialState, action) => {
           ...state,
           userEmail: action.email,
         };
+    case 'SET_ADMIN':
+          return {
+            ...state,
+            isAdmin: true,
+          };
     default:
       return state;
   }
