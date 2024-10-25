@@ -21,10 +21,16 @@ function Login() {
       );
     
     if (data?.status == 200) {
-        setErrorMessage('');
-        dispatch({ type: 'LOGIN_SUCCESS' });
-        dispatch({ type: 'USER_EMAIL', email: username });
-        navigate('/');
+      debugger;
+      console.log(data);
+      localStorage.setItem('authToken', data.token);
+      setErrorMessage('');
+      dispatch({ type: 'LOGIN_SUCCESS' });
+      dispatch({ type: 'USER_EMAIL', email: username });
+      if (data.data.role == 'Admin'){
+        dispatch({type: 'SET_ADMIN'});
+      }
+      navigate('/');
     }
     else {
         setErrorMessage(err?.response?.data);
